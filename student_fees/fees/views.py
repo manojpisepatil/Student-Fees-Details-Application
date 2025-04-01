@@ -16,3 +16,11 @@ def update_fees(request, student_id):
         student.save()
         return redirect('student_list')
     return render(request, 'fees/update_fees.html', {'student': student})
+
+
+# from django.shortcuts import render
+# from .models import Student  # Assuming you have a Student model
+
+# def student_list(request):
+#     students = Student.objects.all()  # Fetch all students from the database
+#     return render(request, 'student_list.html', {'students': students})
