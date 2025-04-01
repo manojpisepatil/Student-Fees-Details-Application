@@ -4,8 +4,7 @@
 
 **Project Structure**
 
-</br>
-     ```bash
+</br>```bash
     student_fees/</br>
     │── student_fees/         # Django project folder</br>
     │   │── settings.py       # Project settings</br>
