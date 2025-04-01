@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Fees</title>
+    <link rel="stylesheet" href="{% static 'fees/style.css' %}">
+</head>
+<body>
+    <h1>Student Fees Details</h1>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Course</th>
+            <th>Total Fees</th>
+            <th>Paid</th>
+            <th>Due</th>
+            <th>Action</th>
+        </tr>
+        {% for student in students %}
+        <tr>
+            <td>{{ student.name }}</td>
+            <td>{{ student.email }}</td>
+            <td>{{ student.course }}</td>
+            <td>${{ student.total_fees }}</td>
+            <td>${{ student.fees_paid }}</td>
+            <td>${{ student.fees_due }}</td>
+            <td><a href="{% url 'update_fees' student.id %}">Update</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
